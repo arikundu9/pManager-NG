@@ -1,0 +1,9 @@
+<div class="flex flex-1 min-h-full" id="con">
+    <div [ngStyle]="{ 'width': w1 + '%' }">
+        <ng-content select="[part1]"></ng-content>
+    </div>
+    <div class="bg-transparent hover:bg-sky-600 w-0.5 min-h-full max-h-screen flex-none" style="cursor: col-resize;" cdkDrag cdkDragLockAxis="x" cdkDragBoundary="#con" (cdkDragMoved)="moved($event)" (cdkDragEnded)="dragEnd($event)" (cdkDragStarted)="dragStarted($event)"></div>
+    <div [ngStyle]="{ 'width': w2 + '%' }">
+        <ng-content select="[part2]"></ng-content>
+    </div>
+</div>

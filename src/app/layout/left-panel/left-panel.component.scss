@@ -1,0 +1,29 @@
+.mat-expansion-panel {
+    @apply rounded-none;
+}
+.mat-expansion-panel-spacing {
+    @apply m-0;
+}
+.mat-expansion-panel-header {
+    @apply h-8 px-2;
+}
+.mat-expansion-panel:not([class*="mat-elevation-z"]) {
+    @apply shadow-none;
+}
+.mat-expansion-panel-header-title,
+.mat-expansion-panel-header-description {
+    @apply text-xs;
+}
+::ng-deep .mat-expansion-panel-body {
+    padding: 0 !important;
+}
+.mat-expansion-panel-content {
+    @apply bg-slate-800;
+}
+.mat-accordion .mat-expansion-panel:last-of-type,
+.mat-accordion .mat-expansion-panel:first-of-type {
+    @apply rounded-none;
+}
+.ep-content{
+    @apply bg-slate-900 text-slate-400 p-1 pl-3
+}
