@@ -24,6 +24,9 @@
 .mat-accordion .mat-expansion-panel:first-of-type {
     @apply rounded-none;
 }
+.mat-expansion-panel:not(.mat-expanded):not([aria-disabled=true]) .mat-expansion-panel-header:hover{
+    @apply bg-blue-700;
+}
 .ep-content{
     @apply bg-slate-900 text-slate-400 p-1 pl-3
 }

@@ -1,0 +1,9 @@
+.dashboard{
+    @apply flex flex-col sm:flex-row bg-slate-400;
+}
+.leftpanel{
+    @apply flex-1 bg-yellow-900 max-w-fit;
+}
+.workspace{
+    @apply flex-1 bg-lime-700 sm:bg-lime-500;
+}
