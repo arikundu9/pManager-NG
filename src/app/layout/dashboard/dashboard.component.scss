@@ -10,3 +10,9 @@
 .toggleBtn{
     @apply bg-sky-600;
 }
+.example-container {
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: var(--home_body_bg);
+}
