@@ -25,6 +25,8 @@ import { DatePipe } from '@angular/common';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { networkSpinnerInterceptor } from '@I/networkSpinner.interceptor';
+import { netlogInterceptor } from '@I/networkLog.interceptor';
+import { networkErrorInterceptor } from '@I/networkError.interceptor';
 
 
 @NgModule({
