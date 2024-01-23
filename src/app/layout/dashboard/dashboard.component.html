@@ -1,50 +1,26 @@
-<mat-drawer-container class="example-container" autosize [hasBackdrop]="backDropFlag">
-    <mat-toolbar color="primary" class="mat-elevation-z4 fixed-toolbar">
-        <mat-toolbar-row>
-            <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="drawer.toggle()">
-                <mat-icon>menu</mat-icon>
-            </button>
-            <span routerLink="/home">eBilling</span>
-            <span class="flex-1"></span>
-            <button mat-button mat-mini-fab class="mx-2" color="" [matMenuTriggerFor]="userMenu">
-                <span class=""><mat-icon>account_circle</mat-icon></span>
-            </button>
-            <mat-menu #userMenu="matMenu" class="p-3 text-dark">
-                <h1>Name</h1>
-                <span class="text">Code:</span
-                ><br />
-                <span class="text">Level:</span
-                ><br />
-                <!-- <span class="text">Authority Code: {{ user.AC }}</span><br /> -->
-                <span class="text">Role:</span
-                ><br />
-            </mat-menu>
-            <button mat-button mat-mini-fab class="mx-4" color="" [matMenuTriggerFor]="settingsMenu">
-                <mat-icon>settings</mat-icon>
-            </button>
-            <!-- <mat-slide-toggle class="px-5" (click)="toggleDarkMode()"></mat-slide-toggle> -->
-            <mat-menu #settingsMenu="matMenu">
-                <!-- <button mat-menu-item (click)="keyboardHelp.toggle()">View Hot Keys</button> -->
-                <!-- <button mat-menu-item (click)="toggleDarkMode()">Toggle Theme (Ctrl+Shift+D)</button> -->
-            </mat-menu>
-            <button mat-button mat-mini-fab color="warn" class="example-icon"  matTooltip="Logout">
-                <mat-icon>power_settings_new</mat-icon>
-            </button>
-        </mat-toolbar-row>
-        <!-- <mat-toolbar-row>aaaaaaa</mat-toolbar-row> -->
-    </mat-toolbar>
+<p-toolbar class="p-0">
+    <div class="p-toolbar-group-left">
+        <button pButton pRipple type="button" icon="pi pi-bars" class="p-button-rounded p-button-text"></button>
+        <h1>pManager</h1>
+        <!-- <p-splitButton label="Save" icon="pi pi-check" [model]="items" styleClass="p-button-warning"></p-splitButton> -->
+    </div>
 
-    <mat-drawer #drawer class="example-sidenav mat-elevation-z10" mode="side" [opened]="true">
-        <!-- <mat-list> -->
-        <!-- <sideBar></sideBar> -->
-        <mat-tree>
-            <mat-tree-node> parent node </mat-tree-node>
-            <mat-tree-node> -- child node1 </mat-tree-node>
-            <mat-tree-node> -- child node2 </mat-tree-node>
-          </mat-tree>
-        <!-- </mat-list> -->
-    </mat-drawer>
-    <router-outlet></router-outlet>
-</mat-drawer-container>
+    <div class="p-toolbar-group-right">
+        <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded"></button>
+        <button pButton pRipple type="button" icon="pi pi-bookmark" class="p-button-rounded p-button-secondary"></button>
+        <button pButton pRipple type="button" icon="pi pi-search" class="p-button-rounded p-button-success"></button>
+        <button pButton pRipple type="button" icon="pi pi-user" class="p-button-rounded p-button-info"></button>
+        <button pButton pRipple type="button" icon="pi pi-bell" class="p-button-rounded p-button-warning"></button>
+        <button pButton pRipple type="button" icon="pi pi-heart" class="p-button-rounded p-button-help"></button>
+        <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-danger"></button>
+    </div>
+</p-toolbar>
+<p-splitter class="min-h-screen" [panelSizes]="[5, 95]">
+    <ng-template pTemplate>
+        <!-- <p-tree [value]="files"></p-tree> -->
+        <p-tieredMenu [model]="items"></p-tieredMenu>
+    </ng-template>
+    <ng-template pTemplate> Panel 2 </ng-template>
+</p-splitter>
 <!-- <ng-keyboard-shortcuts [shortcuts]="shortcuts"></ng-keyboard-shortcuts>
 <ng-keyboard-shortcuts-help [key]="'?'" [closeKey]="'escape'" [title]="'Help'"></ng-keyboard-shortcuts-help> -->

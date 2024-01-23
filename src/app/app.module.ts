@@ -16,11 +16,16 @@ import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTreeModule } from '@angular/material/tree';
+import { SplitterModule } from 'primeng/splitter';
+import { TreeModule } from 'primeng/tree';
+import { ToolbarModule } from 'primeng/toolbar';
+import { ButtonModule } from 'primeng/button';
+import { TieredMenuModule } from 'primeng/tieredmenu'
 
 
 @NgModule({
     declarations: [AppComponent, compDeclaration],
-    imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, KeyboardShortcutsModule, ReactiveFormsModule, DragDropModule, MatExpansionModule, MatSliderModule, CdkMenuModule, MatIconModule, MatMenuModule, MatListModule, MatSidenavModule, MatToolbarModule, MatTreeModule],
+    imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, KeyboardShortcutsModule, ReactiveFormsModule, DragDropModule, MatExpansionModule, MatSliderModule, CdkMenuModule, MatIconModule, MatMenuModule, MatListModule, MatSidenavModule, MatToolbarModule, MatTreeModule, SplitterModule, TreeModule, ToolbarModule, ButtonModule, TieredMenuModule],
     providers: [],
     bootstrap: [AppComponent],
 })

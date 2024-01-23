@@ -54,3 +54,9 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+.p-toolbar {
+    padding: 0 !important;
+}
+.p-splitter{
+    @apply border-red-100 border-4;
+}
