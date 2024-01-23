@@ -32,6 +32,8 @@ import { networkSpinnerInterceptor } from '@I/networkSpinner.interceptor';
     imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, KeyboardShortcutsModule, ReactiveFormsModule, DragDropModule, MatExpansionModule, MatSliderModule, CdkMenuModule, MatIconModule, MatMenuModule, MatListModule, MatSidenavModule, MatToolbarModule, MatTreeModule, SplitterModule, TreeModule, ToolbarModule, ButtonModule, TieredMenuModule],
     providers: [
         DatePipe,
+        { provide: HTTP_INTERCEPTORS, useClass: netlogInterceptor, multi: true },
+        { provide: HTTP_INTERCEPTORS, useClass: networkErrorInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: networkSpinnerInterceptor, multi: true },
         { provide: MAT_DATE_LOCALE, useValue: 'en-GB' }
     ],
