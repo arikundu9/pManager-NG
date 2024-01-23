@@ -8,6 +8,18 @@ export class authService {
 
     }
 
+    loadJwt(token: string): boolean {
+        const parsedToken = this.parseJwt(token);
+        if (parsedToken.authorization_info[0] == '{') {
+            this.lss.set('jt', token);
+            this.lss.set('jt_pl', parsedToken.authorization_info);
+            this.isLogedin = true;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     get user() {
         if (this.isLogedin) {
             return JSON.parse(this.lss.get('jt_pl'));
@@ -36,6 +48,7 @@ export class authService {
         this.lss.del('jt_pl');
         this.lss.del('jt');
         this.lss.del('iL');
+        // window.open('auth server url, '_self');
     }
 
     parseJwt(token: string) {
