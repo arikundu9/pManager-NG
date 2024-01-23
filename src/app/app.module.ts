@@ -20,13 +20,21 @@ import { SplitterModule } from 'primeng/splitter';
 import { TreeModule } from 'primeng/tree';
 import { ToolbarModule } from 'primeng/toolbar';
 import { ButtonModule } from 'primeng/button';
-import { TieredMenuModule } from 'primeng/tieredmenu'
+import { TieredMenuModule } from 'primeng/tieredmenu';
+import { DatePipe } from '@angular/common';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { networkSpinnerInterceptor } from '@I/networkSpinner.interceptor';
 
 
 @NgModule({
     declarations: [AppComponent, compDeclaration],
     imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, KeyboardShortcutsModule, ReactiveFormsModule, DragDropModule, MatExpansionModule, MatSliderModule, CdkMenuModule, MatIconModule, MatMenuModule, MatListModule, MatSidenavModule, MatToolbarModule, MatTreeModule, SplitterModule, TreeModule, ToolbarModule, ButtonModule, TieredMenuModule],
-    providers: [],
+    providers: [
+        DatePipe,
+        { provide: HTTP_INTERCEPTORS, useClass: networkSpinnerInterceptor, multi: true },
+        { provide: MAT_DATE_LOCALE, useValue: 'en-GB' }
+    ],
     bootstrap: [AppComponent],
 })
 export class AppModule { }

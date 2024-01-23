@@ -4,6 +4,8 @@
 
 export const environment = {
     production: false,
+    AesKey: '2766380971449410',
+    AesIV: '2094297996192123',
 };
 
 /*
