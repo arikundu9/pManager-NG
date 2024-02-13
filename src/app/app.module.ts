@@ -22,7 +22,7 @@ import { ToolbarModule } from 'primeng/toolbar';
 import { ButtonModule } from 'primeng/button';
 import { TieredMenuModule } from 'primeng/tieredmenu';
 import { DatePipe } from '@angular/common';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { networkSpinnerInterceptor } from '@I/networkSpinner.interceptor';
 import { netlogInterceptor } from '@I/networkLog.interceptor';
@@ -31,7 +31,7 @@ import { networkErrorInterceptor } from '@I/networkError.interceptor';
 
 @NgModule({
     declarations: [AppComponent, compDeclaration],
-    imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, KeyboardShortcutsModule, ReactiveFormsModule, DragDropModule, MatExpansionModule, MatSliderModule, CdkMenuModule, MatIconModule, MatMenuModule, MatListModule, MatSidenavModule, MatToolbarModule, MatTreeModule, SplitterModule, TreeModule, ToolbarModule, ButtonModule, TieredMenuModule],
+    imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, HttpClientModule, KeyboardShortcutsModule, ReactiveFormsModule, DragDropModule, MatExpansionModule, MatSliderModule, CdkMenuModule, MatIconModule, MatMenuModule, MatListModule, MatSidenavModule, MatToolbarModule, MatTreeModule, SplitterModule, TreeModule, ToolbarModule, ButtonModule, TieredMenuModule],
     providers: [
         DatePipe,
         { provide: HTTP_INTERCEPTORS, useClass: netlogInterceptor, multi: true },

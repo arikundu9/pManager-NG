@@ -4,6 +4,7 @@
 
 export const environment = {
     production: false,
+    pManAPI: 'http://localhost:5678/api',
     AesKey: '2766380971449410',
     AesIV: '2094297996192123',
 };

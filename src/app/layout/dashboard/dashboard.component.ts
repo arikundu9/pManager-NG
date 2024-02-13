@@ -1,3 +1,4 @@
+import { ApiService } from '@S/api.service';
 import { CdkDragEnd, CdkDragMove, CdkDragStart } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
 import { MenuItem, TreeNode } from 'primeng/api';
@@ -56,7 +57,15 @@ export class DashboardComponent implements OnInit {
     }];
     backDropFlag: boolean = false;
     items!: MenuItem[];
-    constructor() { }
+    constructor(private api: ApiService) {
+        this.api.get('/v1/Board').subscribe((resp: any) => {
+            var boardMenusList: any[] = [];
+            resp.data.forEach((element: any) => {
+                boardMenusList.push({ label: element.name, icon: 'pi pi-fw pi-calendar' })
+            });
+            this.items.push({ label: 'BOARDS', icon: 'pi pi-fw pi-calendar', items: boardMenusList })
+        });
+    }
 
     ngOnInit() {
         this.items = [
